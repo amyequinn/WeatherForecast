@@ -1,4 +1,4 @@
-# weatherApp
+
 # LocalWeatherApp
 
 Weather App that determins users location by calling an API using geolocation. 
