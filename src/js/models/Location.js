@@ -10,7 +10,7 @@ export default class Location {
 
     const key = "f6b43829a6dea90e8fcf07d58ccf2766";
 
-    const api = `http://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${key}`;
+    const api = `https://api.openweathermap.org/data/2.5/weather?lat=${this.latitude}&lon=${this.longitude}&appid=${key}`;
 
     await fetch(api)
 
