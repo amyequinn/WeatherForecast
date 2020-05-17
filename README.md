@@ -1,21 +1,26 @@
+
 # LocalWeatherApp
 
-Weather App that determins users location by calling an API using geolocation. Calls a weather API to provide a 7-day weather forecast based on latitude / longitude.
+Weather App that determines users location by calling an API using geolocation.
+Calls a weather API to provide a 7-day weather forecast based on latitude / longitude.
 
 Created using JavaScript. HTML and CSS.
 
-To run from terminal:
+  To run from terminal:
 
-webpack -p
+  webpack -p
 
-npm run dev
+  npm run dev
 
-Buildpacks used:
 
-heroku/nodejs https://github.com/kreativgebiet/heroku-buildpack-webpack
+  Buildpacks used:
 
-Frameworks used:
+  heroku/nodejs
+  https://github.com/kreativgebiet/heroku-buildpack-webpack
 
-Node.js Webpack buildpack
+ Frameworks used:
+
+ Node.js
+ Webpack buildpack
 
 Live Heroku version: https://weather-app-using-api.herokuapp.com/
