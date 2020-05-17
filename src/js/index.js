@@ -2,12 +2,14 @@ import Location from './models/Location';
 import Weather from './models/Weather';
 import * as locationView from './views/locationView';
 import * as weatherView from './views/weatherView';
-import { elements} from './views/base';
+import {
+  elements
+} from './views/base';
 
 const state = {};
 
-window.s = state;
 
+window.s = state;
 
 //Check if browser supports geolocation
 
@@ -20,6 +22,7 @@ if ("geolocation" in navigator) {
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
 
+
 //Set users position
 let latitude;
 let longitude;
@@ -29,33 +32,38 @@ function setPosition(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   controlLocation(latitude, longitude);
-    controlWeather(latitude, longitude);
+  controlWeather(latitude, longitude);
 }
 
-function showError(error) {
+function showError(err) {
   elements.notificationElement.style.display = "block";
-  elements.notificationElement.innerHTML = `<p> ${error.message}</p>`;
+  elements.notificationElement.innerHTML = `<p> ${err.message}</p>`;
+
 
 }
+
+const apiKey = "f6b43829a6dea90e8fcf07d58ccf2766";
 
 const controlLocation = async () => {
-//   create new location object and add it to state
-  if (latitude, longitude){
+  //   create new location object and add it to state
+  if (latitude, longitude) {
 
-  state.location = new Location(latitude, longitude);
+    state.location = new Location(latitude, longitude);
 
-  window.l = state.location
+    window.l = state.location
 
-  try {
-
-  await state.location.getLocation();
-
-  locationView.renderLocation(state.location);
+    try {
 
 
-  }
-  catch (err) {
-      alert('Error processing location!')
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${state.location.latitude}&lon=${state.location.longitude}&appid=${apiKey}`;
+
+      await state.location.getData(api);
+
+      locationView.renderLocation(state.location.data);
+
+
+    } catch (err) {
+      alert("Location " + err.message)
     }
   }
 }
@@ -63,22 +71,22 @@ const controlLocation = async () => {
 
 const controlWeather = async () => {
   //create new weather object and save it to state
-  if(latitude, longitude){
+  if (latitude, longitude) {
     state.weather = new Weather(latitude, longitude);
     window.w = state.weather;
 
-      try {
+    try {
 
-      await state.weather.getWeather();
+      const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${state.weather.latitude}&lon=${state.weather.longitude}&appid=${apiKey}`;
 
+      await state.weather.getData(api);
 
-      weatherView.renderResults(state.weather)
+      weatherView.renderResults(state.weather.data)
 
       // weatherView.renderWeather(state)
 
-      }
-      catch (err) {
-          alert('Error processing Weather!')
-        }
+    } catch (err) {
+      alert("Weather " + err.message)
+    }
   }
 }

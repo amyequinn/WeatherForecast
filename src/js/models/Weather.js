@@ -1,35 +1,11 @@
-export default class Weather {
-  constructor(latitude, longitude) {
-    this.latitude = latitude;
-    this.longitude = longitude;
+import Location from './Location';
+
+export default class Weather extends Location {
+    super(latitude, longitude){
 
 
   }
 
 
-  async getWeather() {
-
-    const key = "f6b43829a6dea90e8fcf07d58ccf2766";
-
-    const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${this.latitude}&lon=${this.longitude}&appid=${key}`;
-
-    await fetch(api)
-
-      .then(response => response.json())
-
-      .then(data => {
-        window.results = data
-        this.results = data.daily
-        this.hourly = data.hourly
-
-
-
-      })
-
-      .catch(err => {
-        alert(err);
-      });
-
-  }
 
 }

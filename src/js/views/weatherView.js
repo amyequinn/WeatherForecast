@@ -2,7 +2,7 @@ import { elements} from './base';
 
 export const renderResults = weather => {
 
-weather.results.forEach(renderWeather)
+weather.daily.forEach(renderWeather)
 
 }
 
@@ -15,7 +15,7 @@ export const renderWeather = (weather) => {
   weather.display = weather.day.toString("");
   weather.today = weather.display.slice(0, 15);
   weather.windSpeed = Math.floor(weather.wind_speed / 0.44704);
-  weather.windDirection = weather.wind_deg;
+  weather.windDirection = weather.wind_deg
 
   weather.temp = Math.floor(weather.temp.day - KELVIN);
 
@@ -35,6 +35,7 @@ export const renderWeather = (weather) => {
         <div class="temperature-description"><p>${weather.weather[0].description}</p></div>
 
           <div class="wind-speed"><p> Wind Speed ${weather.windSpeed} mph</p></div>
+          <div class="wind-direction" style="transform:rotate(${weather.windDirection}deg)";><p>&#x2193</p></div>
       </div>
   `
   elements.weatherContainer.insertAdjacentHTML('beforeend', markup);

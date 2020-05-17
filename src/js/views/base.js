@@ -8,5 +8,4 @@ export const elements = {
   descElement: document.querySelector('.temperature-description p'),
   locationElement: document.querySelector('.location p')
 
-
 }
