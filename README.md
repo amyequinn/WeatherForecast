@@ -10,7 +10,11 @@ Created using JavaScript. HTML and CSS.
 
   webpack -p
 
-  npm run dev
+  npm install
+
+  npm run start
+
+  localhost:8080
 
 
   Buildpacks used:
