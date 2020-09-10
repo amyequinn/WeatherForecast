@@ -1,43 +1,179 @@
-*{
-  font-family: Arial;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+
+
+:root{
+  --LapisLaxuli:#2F6690;
+  --SteelBlue:#3A7CA5;
+  --Timberwolf:#D9DCD6;
+  --IndigoDye:#16425B;
+  --DarkSkyBlue:#81C3D7;
 }
 
-/* body {
-  background-color: #6668cc
+#myFakeElement { color:red ; }
 
-} */
 
-body {
-  background: #8360c3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-/* .start-button{
-  background-color: pink;
-  width: 100px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50px;
-  padding: 10px;
-  font-size: 18px;
-  font-style: oblique;
-  font-weight: bold;
-  color: blue;
+body{
+  /* fallback for old browsers */
+  font-family: 'Merriweather', serif!important;
+  color: var(--LapisLAxuli);
+  
 
-} */
-
-.container{
-  width: 300px;
-  background-color: #FFF;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  padding-bottom: 50px;
 
 
 }
+.preloader{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  background: var(--Timberwolf);
+  z-index: 999;
+}
+.hidePreloader{
+  display: none!important;
+}
+
+.navbar{
+  background: white;
+}
+
+.nav-link{
+  background: white;
+  color: var(--LapisLaxuli);
+
+}
+
+.navbar-nav{
+  background: white;
+}
+
+.navbar-toggler{
+  color: var(--LapisLaxuli);
+
+}
+.logo{
+  font-size: 2rem;
+  color: var(--LapisLaxuli);
+}
+
+.nav-icon{
+  font-size: 1.5rem;
+  color: var(--LapisLaxuli);
+  text-decoration: none!important;
+  transition-property: color;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+
+.nav-icon:hover{
+  color: var(--SteelBlue);
+}
 
 
+
+/*header */
+
+.header{
+  clip-path: polygon(0 0,100% 0, 100% 95%, 50% 100%, 0 95%);
+
+  overflow: hidden;
+}
+
+.height-max{
+  min-height: calc(100vh - 76px);
+  background: url('../img/earth.jpeg')center/cover fixed no-repeat;
+  animation-name: zoom;
+  animation-duration: 20s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+@keyframes zoom{
+ 0% {
+   transform: scale(1);
+ }
+ 50% {
+   transform: scale(1.18) translate(-5%);
+ }
+ 100% {
+   transform: scale(1);
+ }
+}
+
+.title-heading{
+  background: rgba(0,0,0,0.4);
+  color: var(--Timberwolf);
+  border-left: 0.3rem solid var(--LapisLaxuli);
+}
+
+.title{
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--Timberwolf);
+}
+
+@media screen and (min-width: 768px){
+  .title{
+    font-size: 3rem;
+  }
+}
+
+.title-icon{
+  color: var(--Timberwolf);
+  text-decoration: none!important;
+}
+
+.title-icon:hover{
+  color: var(--LapisLaxuli);
+  opacity: 0.6;
+}
+
+/*section title*/
+
+.first-title{
+  color: var(--LapisLaxuli);;
+}
+.section-title--special{
+  background: var(--LapisLaxuli);
+  color: var(--Timberwolf);
+  padding: 0.5rem 2rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+/*weather card*/
+
+.all-card{
+  background: var(--DarkSkyBlue)!important;
+    color: var(--LapisLaxuli)!important;
+    height: 390px!important;
+    width: 350px!important;
+    border-radius: 5%;
+}
+.card-date{
+  background: var(--Timberwolf);
+  padding-top: 0.5rem;
+}
+
+
+.owi-group{
+
+}
+
+
+
+.temperature-unit{
+  font-size: 1.5rem;
+}
+
+.wind-direction{
+  max-height: 40px;
+  max-width: 40px;
+
+}
+/*
 .date p{
   text-align: center;
   padding: 15px;
@@ -114,7 +250,7 @@ body {
   font-size: 2.0em;
   font-weight: bold;
   font-family: Wingdings;
-  /* transform: rotate(220deg); */
+  /* transform: rotate(220deg);
 }
 .location{
 
@@ -134,4 +270,4 @@ body {
   color: #293251;
   text-align: center;
   font-size: 1.2em;
-}
+} */

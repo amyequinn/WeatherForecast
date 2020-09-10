@@ -1,15 +1,18 @@
-import { elements} from './base';
+import {
+  elements
+} from './base';
+
 
 export const renderResults = weather => {
-
-weather.daily.forEach(renderWeather)
-
+  //
+  // weather.daily.forEach(renderWeather)
+  renderWeather(weather.daily[0])
 }
 
 const KELVIN = 273;
 
 export const renderWeather = (weather) => {
-
+  console.log(weather)
   weather.day = new Date(weather.dt * 1000);
   weather.clouds = weather.clouds;
   weather.display = weather.day.toString("");
@@ -19,24 +22,26 @@ export const renderWeather = (weather) => {
 
   weather.temp = Math.floor(weather.temp.day - KELVIN);
 
+console.log(weather.weather[0].icon)
 
-  const markup = `
+const markup = `
+  <div class="card all-card today-card py-3">
+          <div class="card-date">
+            <h4 class="card-title text-center py-2">${weather.today}</h4>
+          </div>
+          <div class="owi-group text-center py-1">
+            <i class="owi owi-4x owi-${weather.weather[0].icon}"></i>
+          </div>
+          <div class="card-body">
+            <h4 class="card-text temperature-icon text-center">${weather.temp}</h4>
+            <h4 class="card-text weather-description text-center">${weather.weather[0].description}</h4>
+            <div class="wind">
+              <h4 class="card-text wind-speed text-center">${weather.windSpeed}</h4>
+                <div class="wind-direction" style="transform:rotate(${weather.windDirection}deg)";><p>&#x2193</p></div>
+              </div>
+          </div>
+        </div>
+            </div>`
 
-    <div class="container">
-
-      <div class="date"><p>${weather.today}</p></div>
-
-      <div class="weather-container">
-
-        <div class="weather-icon"><img src="img/${weather.weather[0].icon}.png" alt=""></div>
-
-        <div class="temperature-value"><p>${weather.temp}°<span>C</span></p></div>
-
-        <div class="temperature-description"><p>${weather.weather[0].description}</p></div>
-
-          <div class="wind-speed"><p> Wind Speed ${weather.windSpeed} mph</p></div>
-          <div class="wind-direction" style="transform:rotate(${weather.windDirection}deg)";><p>&#x2193</p></div>
-      </div>
-  `
-  elements.weatherContainer.insertAdjacentHTML('beforeend', markup);
+elements.todaysWeatherContainer.insertAdjacentHTML('beforeend', markup);
 }
