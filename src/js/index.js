@@ -3,14 +3,13 @@ import Weather from './models/Weather';
 import * as locationView from './views/locationView';
 import * as weatherView from './views/weatherView';
 import {elements} from './views/base';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+// import 'bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 
 
 window.addEventListener('load', () => elements.preloaderElement.classList.add('hidePreloader'));
-
 
 const state = {};
 

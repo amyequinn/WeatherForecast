@@ -53,7 +53,7 @@ body{
   color: var(--LapisLaxuli)!important;
 
 }
-.navbar-logo{
+.navbar-brand{
   font-size: 2rem;
   color: var(--LapisLaxuli);
 }
@@ -173,6 +173,8 @@ body{
   max-width: 40px;
 
 }
+
+
 /*
 .date p{
   text-align: center;
