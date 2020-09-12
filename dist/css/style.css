@@ -124,10 +124,11 @@ body{
 .title-icon{
   color: var(--Timberwolf);
   text-decoration: none!important;
+  font-size: 3rem;
 }
 
 .title-icon:hover{
-  color: var(--LapisLaxuli);
+  color: var(--DarkSkyBlue);
   opacity: 0.6;
 }
 
