@@ -32,11 +32,11 @@ export const renderWeather = (weather) => {
     windDirection: weather.windDirection
   }];
 
-  displayWeather(allWeather);
+  displayDailyWeather(allWeather);
 
 }
 
-export const displayWeather = (allWeather) => {
+export const displayDailyWeather = (allWeather) => {
   console.log(allWeather)
   const markup = `
   <div class="card all-card today-card py-3">

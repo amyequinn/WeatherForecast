@@ -17,7 +17,7 @@ body{
   /* fallback for old browsers */
   font-family: 'Merriweather', serif!important;
   color: var(--LapisLAxuli);
-  
+
 
 
 
@@ -50,10 +50,10 @@ body{
 }
 
 .navbar-toggler{
-  color: var(--LapisLaxuli);
+  color: var(--LapisLaxuli)!important;
 
 }
-.logo{
+.navbar-logo{
   font-size: 2rem;
   color: var(--LapisLaxuli);
 }

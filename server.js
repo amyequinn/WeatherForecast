@@ -3,6 +3,7 @@ const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
 
+Accept-Encoding: gzip, compress, br;
 
 
 // the __dirname is the current directory from where the script is running

@@ -9,10 +9,8 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 
+window.addEventListener('load', () => elements.preloaderElement.classList.add('hidePreloader'));
 
-
-// window.addEventListener('load', () => elements.preloaderElement.classList.add('hidePreloader'));
-//
 
 const state = {};
 
@@ -20,6 +18,8 @@ const state = {};
 window.s = state;
 
 //Check if browser supports geolocation
+
+
 
 if ("geolocation" in navigator) {
 

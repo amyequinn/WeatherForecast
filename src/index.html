@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="Description" content="weather app to show the daily weather forecast based on current location"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,10 +13,67 @@
   <link rel="stylesheet" href="css/open-weather-icons.css">
   <!-- font awesome -->
   <script src="js/all.js"></script>
+  <title>Weather Forecast App</title>
 
-<link href="/dist/main.css" rel="stylesheet"><link href="/dist/main.css" rel="stylesheet">
-</head>
 <body>
+    <!-- preloader -->
+  <div class="preloader d-flex justify-content-center align-items-center">
+    <img src="img/preloader.gif" alt="preloader">
+  </div>
+  <!-- end preloader -->
+
+  <!-- nav element -->
+  <nav class="navbar bg-dark navbar-expand-lg px-3" id="navBar">
+    <a href="#" class="navbar-logo">
+        <span>
+        <i class="fas fa-rainbow" alt="logo"></i>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#myNav'>
+      <span class="navbar-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+    </button>
+    <!--  -->
+    <div class="collapse navbar-collapse" id="myNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a href="#navBar" class="nav-link text-capitalize">
+            home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#today" class="nav-link text-capitalize">
+            weather today
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#weekly forecast" class="nav-link text-capitalize">
+            weekly forecast
+          </a>
+        </li>
+      </ul>
+      <!-- social icons -->
+      <div class="nav-icons d-none d-lg-block">
+        <a href="http://www.facebook.com" class="nav-icon">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="http://www.twitter.com" class="nav-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="http://www.instagram.com" class="nav-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- end of nav element -->
+
+
+
+ <div class="notification">
+
+  </div>
 <div class="location">
 
 </div>
@@ -30,6 +88,7 @@
   <!-- bootstrap js -->
   <script src="js/bootstrap.bundle.min.js"></script>
 
+</body>
 
 
 </html>
