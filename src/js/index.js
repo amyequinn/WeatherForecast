@@ -18,7 +18,9 @@ window.s = state;
 
 //Check if browser supports geolocation
 
+elements.startElement.addEventListener("click", () => getGeoLocation());
 
+function getGeoLocation() {
 
 if ("geolocation" in navigator) {
 
@@ -29,10 +31,13 @@ if ("geolocation" in navigator) {
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
 
+}
+
 
 //Set users position
 let latitude;
 let longitude;
+
 
   function setPosition(position) {
 
@@ -44,7 +49,7 @@ let longitude;
 
 function showError(err) {
   elements.notificationElement.style.display = "block";
-  elements.notificationElement.innerHTML = `<p> ${err.message}</p>`;
+  elements.notificationElement.innerHTML = `<h3 class="text-center" style="color:red"> ${err.message} Check internet connection</h3>`;
 
 
 }

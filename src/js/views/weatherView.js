@@ -47,10 +47,10 @@ export const displayDailyWeather = (allWeather) => {
             <i class="owi owi-4x owi-${allWeather[0].icon}"></i>
           </div>
           <div class="card-body">
-            <h4 class="card-text temperature-icon text-center">${allWeather[0].temp}</h4>
+            <h4 class="card-text temperature-icon text-center">${allWeather[0].temp}°C</h4>
             <h4 class="card-text weather-description text-center">${allWeather[0].description}</h4>
             <div class="wind">
-              <h4 class="card-text wind-speed text-center">${allWeather[0].windSpeed}</h4>
+              <h4 class="card-text wind-speed text-center">wind speed ${allWeather[0].windSpeed} mph</h4>
                 <div class="wind-direction" style="transform:rotate(${allWeather[0].windDirection}deg)";><p>&#x2193</p></div>
               </div>
           </div>

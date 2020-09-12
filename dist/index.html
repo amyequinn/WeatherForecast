@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="Description" content="weather app to show the daily weather forecast based on current location">
   <meta charset="UTF-8">
@@ -17,8 +18,9 @@
   <style>
   </style>
 </head>
+
 <body>
-    <!-- preloader -->
+  <!-- preloader -->
   <div class="preloader d-flex justify-content-center align-items-center">
     <img src="img/preloader.gif" alt="preloader">
   </div>
@@ -27,7 +29,7 @@
   <!-- nav element -->
   <nav class="navbar navbar-expand-lg px-3" id="navBar">
     <a href="#" class="navbar-brand">
-        <span>
+      <span>
         <i class="fas fa-rainbow" alt="logo"></i>
       </span>
     </a>
@@ -39,18 +41,18 @@
     <!--  -->
     <div class="collapse navbar-collapse" id="myNav">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item active">
-          <a href="#navBar" class="nav-link text-capitalize d-flex justify-content-around">
+        <li class="nav-item active ">
+          <a href="#navBar" class="nav-link text-capitalize">
             home
           </a>
         </li>
         <li class="nav-item">
-          <a href="#today" class="nav-link text-capitalize d-flex justify-content-around">
+          <a href="#today" class="nav-link text-capitalize">
             weather today
           </a>
         </li>
         <li class="nav-item">
-          <a href="#weekly forecast" class="nav-link text-capitalize d-flex justify-content-around">
+          <a href="#weekly forecast" class="nav-link text-capitalize">
             weekly forecast
           </a>
         </li>
@@ -70,33 +72,59 @@
     </div>
   </nav>
   <!-- end of nav element -->
+  <div class="notification">
+
+  </div>
   <!-- header section -->
-    <header class="header" id="header">
-      <div class="container-fluid">
-        <div class="row height-max align-items-center">
-          <div class="col col-md-9 ml-auto text-right pr-5">
-            <h5 class="title-heading d-inline-block p-2 text-uppercase">weather app</h5>
-            <h2 class="title text-uppercase my-2 title">accurate weather forecast</h2>
-            <h3 class="title text-uppercase">around the globe</h3>
-            <h6 class="text-capitalize">start</h6>
-            <a href="" class="title-icon d-inline-block mx-2">
-                <i class="fas fa-play"></i>
-              </a>
+  <header class="header" id="header">
+    <div class="container-fluid">
+      <div class="row height-max align-items-center">
+        <div class="col col-md-9 ml-auto text-right pr-5">
+          <h5 class="title-heading d-inline-block p-2 text-uppercase">weather app</h5>
+          <h2 class="title text-uppercase my-2 title">accurate weather forecast</h2>
+          <h3 class="title text-uppercase">around the globe</h3>
+          <h6 class="text-capitalize">start</h6>
+          <a href="#today" class="title-icon d-inline-block mx-2">
+            <i class="fas fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end of  header section -->
+
+  <!-- today section -->
+  <section class="today py-5" id="today">
+    <div class="container section-height">
+      <!-- section title -->
+      <div class="row mb-5">
+        <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+          <h1 class="font-weight-bold align-self-center mx-1">weather</h1>
+          <h1 class="section-title--special mx-1">today</h1>
+        </div>
+      </div>
+
+      <div class="location text-center">
+
+      </div>
+      <!-- end of section title -->
+      <div class="row">
+
+        <!-- single card -->
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+
+          <div class="today-card">
+
           </div>
         </div>
       </div>
-    </header>
-    <!--end of  header section -->
- <div class="notification">
+    </div>
+  </section>
+  <!--end of today section -->
 
-  </div>
-<div class="location">
 
-</div>
 
-<div class="today-card">
 
-</div>
 
 
 
