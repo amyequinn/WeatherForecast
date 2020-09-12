@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import Location from './models/Location';
 import Weather from './models/Weather';
 import * as locationView from './views/locationView';
