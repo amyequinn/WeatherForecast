@@ -23,7 +23,7 @@ elements.startElement.addEventListener("click", () => getGeoLocation());
 function getGeoLocation() {
 
 if ("geolocation" in navigator) {
-console.log("geolocation" in navigator)
+
   navigator.geolocation.getCurrentPosition(setPosition, showError);
 
 } else {

@@ -178,6 +178,10 @@ body{
 .wind-direction{
   font-size: 2rem;
 }
+
+.temperature-row{
+  flex-direction: column;
+}
 /*
 .date p{
   text-align: center;

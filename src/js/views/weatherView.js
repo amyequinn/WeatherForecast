@@ -7,12 +7,13 @@ export const renderResults = weather => {
   //
   // weather.daily.forEach(renderWeather)
   renderWeather(weather.daily[0])
+
 }
 
 const KELVIN = 273;
 
 export const renderWeather = (weather) => {
-
+console.log(weather)
   weather.day = new Date(weather.dt * 1000);
   weather.clouds = weather.clouds;
   weather.display = weather.day.toString("");
@@ -46,13 +47,17 @@ export const displayDailyWeather = (allWeather) => {
           <div class="owi-group text-center py-1">
             <i class="owi owi-4x owi-${allWeather[0].icon}"></i>
           </div>
-          <div class="card-body">
+          <div class="row card-body">
+          <div class="col">
             <h4 class="card-text temperature-icon text-center">${allWeather[0].temp}°C</h4>
             <h4 class="card-text weather-description text-center">${allWeather[0].description}</h4>
             <div class="wind">
-              <h4 class="card-text wind-speed text-center">${allWeather[0].windSpeed} mph</h4>
+
                 <div class="wind-direction"><p class="text-center" style="transform:rotate(${allWeather[0].windDirection}deg)">&#x2193</p></div>
+                  <h4 class="card-text wind-speed text-center">${allWeather[0].windSpeed} mph</h4>
               </div>
+              </div>
+          </div>
           </div>
         </div>
             </div>`
