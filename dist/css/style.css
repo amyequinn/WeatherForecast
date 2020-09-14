@@ -18,9 +18,6 @@ body{
   font-family: 'Merriweather', serif!important;
   color: var(--LapisLAxuli);
 
-
-
-
 }
 .preloader{
   position: fixed;
@@ -132,6 +129,11 @@ body{
   opacity: 0.6;
 }
 
+.location p{
+  color: var(--LapisLaxuli);
+  font-size: 2rem;
+}
+
 /*section title*/
 
 .first-title{
@@ -146,7 +148,7 @@ body{
 
 
 .section-height{
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - 74px);
 }
 /*weather card*/
 
@@ -174,12 +176,8 @@ body{
 }
 
 .wind-direction{
-  max-height: 40px;
-  max-width: 40px;
-
+  font-size: 2rem;
 }
-
-
 /*
 .date p{
   text-align: center;

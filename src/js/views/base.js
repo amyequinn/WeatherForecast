@@ -7,9 +7,10 @@ export const elements = {
   iconElement: document.querySelector('.weather-icon'),
   tempElement: document.querySelector('.temperature-value p'),
   descElement: document.querySelector('.temperature-description p'),
-  locationElement: document.querySelector('.location'),
+  locationElement: document.querySelector('.location p'),
   preloaderElement: document.querySelector('.preloader'),
-  startElement: document.querySelector('.title-icon')
+  startElement: document.querySelector('.title-icon'),
+  getGeoElement: document.querySelector('.today')
 
 }
 //

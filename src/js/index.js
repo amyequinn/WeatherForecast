@@ -23,15 +23,16 @@ elements.startElement.addEventListener("click", () => getGeoLocation());
 function getGeoLocation() {
 
 if ("geolocation" in navigator) {
-
+console.log("geolocation" in navigator)
   navigator.geolocation.getCurrentPosition(setPosition, showError);
 
 } else {
   elements.notificationElement.style.display = "block";
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
-
 }
+
+
 
 
 //Set users position
@@ -41,10 +42,16 @@ let longitude;
 
   function setPosition(position) {
 
+  if(elements.getGeoElement.classList.contains('d-none')) {
+  elements.getGeoElement.classList.remove('d-none');
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   controlLocation(latitude, longitude);
   controlWeather(latitude, longitude);
+}
+  else {
+    return
+  }
 }
 
 function showError(err) {
@@ -93,7 +100,9 @@ const controlWeather = async () => {
 
       await state.weather.getData(api);
 
+
       weatherView.renderResults(state.weather.data)
+
 
       // weatherView.renderWeather(state)
 

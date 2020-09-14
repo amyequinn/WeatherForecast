@@ -37,7 +37,7 @@ export const renderWeather = (weather) => {
 }
 
 export const displayDailyWeather = (allWeather) => {
-  console.log(allWeather)
+
   const markup = `
   <div class="card all-card today-card py-3">
           <div class="card-date">
@@ -50,8 +50,8 @@ export const displayDailyWeather = (allWeather) => {
             <h4 class="card-text temperature-icon text-center">${allWeather[0].temp}°C</h4>
             <h4 class="card-text weather-description text-center">${allWeather[0].description}</h4>
             <div class="wind">
-              <h4 class="card-text wind-speed text-center">wind speed ${allWeather[0].windSpeed} mph</h4>
-                <div class="wind-direction" style="transform:rotate(${allWeather[0].windDirection}deg)";><p>&#x2193</p></div>
+              <h4 class="card-text wind-speed text-center">${allWeather[0].windSpeed} mph</h4>
+                <div class="wind-direction"><p class="text-center" style="transform:rotate(${allWeather[0].windDirection}deg)">&#x2193</p></div>
               </div>
           </div>
         </div>

@@ -94,7 +94,56 @@
   <!--end of  header section -->
 
   <!-- today section -->
-  <section class="today py-5" id="today">
+    <section class="today py-5 d-none">
+    <!-- nav element -->
+    <nav class="navbar navbar-expand-lg px-3" id="today">
+      <a href="#" class="navbar-brand">
+        <span>
+          <i class="fas fa-rainbow" alt="logo"></i>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#myNav'>
+        <span class="navbar-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <!--  -->
+      <div class="collapse navbar-collapse" id="myNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a href="#navBar" class="nav-link text-capitalize">
+              home
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="#today" class="nav-link text-capitalize">
+              weather today
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#weekly forecast" class="nav-link text-capitalize">
+              weekly forecast
+            </a>
+          </li>
+        </ul>
+        <!-- social icons -->
+        <div class="nav-icons d-none d-lg-block">
+          <a href="http://www.facebook.com" class="nav-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="http://www.twitter.com" class="nav-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="http://www.instagram.com" class="nav-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav element -->
+    <div class="notification">
+    </div>
+
     <div class="container section-height">
       <!-- section title -->
       <div class="row mb-5">
@@ -104,20 +153,27 @@
         </div>
       </div>
 
-      <div class="location text-center">
-
+      <div class="row">
+        <!--location-->
+        <div class="location mx-auto text-center">
+          <p class="mx-auto text-center"></p>
+        </div>
       </div>
+
       <!-- end of section title -->
       <div class="row">
 
         <!-- single card -->
         <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
 
-          <div class="today-card">
+          <div class="today-card d-flex justify-content-center">
 
           </div>
         </div>
       </div>
+
+
+
     </div>
   </section>
   <!--end of today section -->
