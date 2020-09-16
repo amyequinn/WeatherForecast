@@ -150,9 +150,15 @@ body{
 }
 
 .section-height{
-  min-height: calc(100vh - 125px)!important;
+  /* min-height: calc(100vh - 94px); */
+  padding-top: 1.5rem;
 }
+
+
+
 /*weather card*/
+
+
 
 .all-card{
   background: var(--DarkSkyBlue)!important;
