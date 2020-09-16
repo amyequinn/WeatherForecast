@@ -19,6 +19,7 @@ window.s = state;
 //Check if browser supports geolocation
 
 elements.startElement.addEventListener("click", () => getGeoLocation());
+elements.todayElement.addEventListener("click", () => getGeoLocation());
 
 function getGeoLocation() {
 
@@ -42,16 +43,16 @@ let longitude;
 
   function setPosition(position) {
 
-  if(elements.getGeoElement.classList.contains('d-none')) {
-  elements.getGeoElement.classList.remove('d-none');
+  // if(elements.getGeoElement.classList.contains('d-none')) {
+  // elements.getGeoElement.classList.remove('d-none');
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   controlLocation(latitude, longitude);
   controlWeather(latitude, longitude);
-}
-  else {
-    return
-  }
+// }
+//   else {
+//     return
+//   }
 }
 
 function showError(err) {

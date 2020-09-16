@@ -10,7 +10,8 @@ export const elements = {
   locationElement: document.querySelector('.location p'),
   preloaderElement: document.querySelector('.preloader'),
   startElement: document.querySelector('.title-icon'),
-  getGeoElement: document.querySelector('.today')
-
+  getGeoElement: document.querySelector('.today'),
+  todayElement: document.querySelector('.home-link'),
+  hourlyWeatherContainer: document.querySelector('.hourly-row')
 }
 //

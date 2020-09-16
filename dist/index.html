@@ -27,7 +27,7 @@
   <!-- end preloader -->
 
   <!-- nav element -->
-  <nav class="navbar navbar-expand-lg px-3" id="navBar">
+  <nav class="navbar fixed-top navbar-expand-lg px-3" id="navBar">
     <a href="#" class="navbar-brand">
       <span>
         <i class="fas fa-rainbow" alt="logo"></i>
@@ -42,12 +42,12 @@
     <div class="collapse navbar-collapse" id="myNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active ">
-          <a href="#navBar" class="nav-link text-capitalize">
+          <a href="#header" class="nav-link text-capitalize">
             home
           </a>
         </li>
         <li class="nav-item">
-          <a href="#today" class="nav-link text-capitalize">
+          <a href="#today" class="nav-link home-link text-capitalize">
             weather today
           </a>
         </li>
@@ -59,10 +59,10 @@
       </ul>
       <!-- social icons -->
       <div class="nav-icons d-none d-lg-block">
-        <a href="http://www.facebook.com" class="nav-icon">
+        <a href="http://www.facebook.com/groups/openweathermap/" class="nav-icon">
           <i class="fab fa-facebook"></i>
         </a>
-        <a href="http://www.twitter.com" class="nav-icon">
+        <a href="http://twitter.com/OpenWeatherMap" class="nav-icon">
           <i class="fab fa-twitter"></i>
         </a>
         <a href="http://www.instagram.com" class="nav-icon">
@@ -80,6 +80,7 @@
     <div class="container-fluid">
       <div class="row height-max align-items-center">
         <div class="col col-md-9 ml-auto text-right pr-5">
+
           <h5 class="title-heading d-inline-block p-2 text-uppercase">weather app</h5>
           <h2 class="title text-uppercase my-2 title">accurate weather forecast</h2>
           <h3 class="title text-uppercase">around the globe</h3>
@@ -87,6 +88,7 @@
           <a href="#today" class="title-icon d-inline-block mx-2">
             <i class="fas fa-play"></i>
           </a>
+
         </div>
       </div>
     </div>
@@ -94,66 +96,21 @@
   <!--end of  header section -->
 
   <!-- today section -->
-    <section class="today py-5 d-none">
-    <!-- nav element -->
-    <nav class="navbar navbar-expand-lg px-3" id="today">
-      <a href="#" class="navbar-brand">
-        <span>
-          <i class="fas fa-rainbow" alt="logo"></i>
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#myNav'>
-        <span class="navbar-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-      </button>
-      <!--  -->
-      <div class="collapse navbar-collapse" id="myNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a href="#navBar" class="nav-link text-capitalize">
-              home
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a href="#today" class="nav-link text-capitalize">
-              weather today
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#weekly forecast" class="nav-link text-capitalize">
-              weekly forecast
-            </a>
-          </li>
-        </ul>
-        <!-- social icons -->
-        <div class="nav-icons d-none d-lg-block">
-          <a href="http://www.facebook.com" class="nav-icon">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="http://www.twitter.com" class="nav-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="http://www.instagram.com" class="nav-icon">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </nav>
-    <!-- end of nav element -->
+    <section class="today py-5 d-none" id="today">
+
     <div class="notification">
     </div>
 
     <div class="container section-height">
       <!-- section title -->
-      <div class="row mb-5">
+      <div class="row title-row mb-5">
         <div class="col d-flex flex-wrap text-uppercase justify-content-center">
           <h1 class="font-weight-bold align-self-center mx-1">weather</h1>
           <h1 class="section-title--special mx-1">today</h1>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row location-row">
         <!--location-->
         <div class="location mx-auto text-center">
           <p class="mx-auto text-center"></p>
@@ -161,17 +118,31 @@
       </div>
 
       <!-- end of section title -->
-      <div class="row">
+      <div class="row today-row">
 
         <!-- single card -->
         <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
 
           <div class="today-card d-flex justify-content-center">
 
+
           </div>
         </div>
-      </div>
+        <!--end of single card?-->
 
+      </div>
+      <!--end of today row -->
+      <!--start of hourly row -->
+      <div class="row hourly-row">
+
+
+
+        </div>
+        <!--end of single card?-->
+        <!--end of hourly row-->
+    </div>
+
+<!--end of container-->
 
 
     </div>

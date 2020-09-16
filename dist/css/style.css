@@ -79,7 +79,7 @@ body{
 }
 
 .height-max{
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 20px);
   background: url('../img/earth.jpeg')center/cover fixed no-repeat;
   animation-name: zoom;
   animation-duration: 20s;
@@ -112,6 +112,9 @@ body{
   color: var(--Timberwolf);
 }
 
+.title:hover{
+  cursor: pointer
+}
 @media screen and (min-width: 768px){
   .title{
     font-size: 3rem;
@@ -146,9 +149,8 @@ body{
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
 
-
 .section-height{
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 125px)!important;
 }
 /*weather card*/
 
@@ -159,7 +161,7 @@ body{
     width: 350px!important;
     border-radius: 5%;
 }
-.card-date{
+.card-date, .card-time{
   background: var(--Timberwolf);
   padding-top: 0.5rem;
 }
@@ -169,6 +171,10 @@ body{
 
 }
 
+.wind{
+  margin: auto;
+  overflow: hidden;
+}
 
 
 .temperature-unit{
