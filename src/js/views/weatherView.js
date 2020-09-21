@@ -11,7 +11,8 @@ export const renderResults = weather => {
   renderDailyWeather(weather.daily[0]);
 
 
-  hourlyWeather.forEach(renderHourlyWeather)
+  hourlyWeather.forEach(renderHourlyWeather);
+
 
 }
 
@@ -76,8 +77,8 @@ export const displayDailyWeather = (allWeather) => {
       }
 
 }
-export const renderHourlyWeather = (weather) => {
-console.log(weather)
+export const renderHourlyWeather = (weather, i) => {
+
 weather.date = new Date(weather.dt * 1000);
 weather.hours = weather.date.getHours();
 weather.display = weather.date.toString();
@@ -92,7 +93,7 @@ weather.temp = Math.floor(weather.temp - KELVIN);
   const allWeather = [{
     today: weather.today,
     date: weather.date,
-    time: weather.hours + ":00",
+    time: weather.time,
     icon: weather.icon,
     temp: weather.temp,
     description: weather.description,
@@ -100,21 +101,72 @@ weather.temp = Math.floor(weather.temp - KELVIN);
     windDirection: weather.windDirection
   }];
 
-displayHourlyWeather(allWeather)
+displayHourlyWeather(allWeather);
+
+displayCarousel(allWeather, i);
 
 }
 
-export const displayHourlyWeather = (weather) => {
+export const displayCarousel = (weather, i) => {
+
+  let carouselActive = ''
+
+  if(i === 0){
+    carouselActive = 'carousel-item active'
+  } else {
+    carouselActive = 'carousel-item'
+  }
 
 
-    const markup = `
-<div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+  const markup = `
+  <div class="${carouselActive}">
+<div class="col-10 mx-auto my-3 col-md-6 col-lg-6">
 
   <div class="hourly-card d-flex justify-content-center">
 
 
     <div class="card all-card hourly-card py-3">
-    
+
+            <div class="card-time">
+              <h4 class="card-title text-center py-2">${weather[0].time}</h4>
+            </div>
+            <div class="owi-group text-center py-1">
+              <i class="owi owi-4x owi-${weather[0].icon}"></i>
+            </div>
+            <div class="row card-body">
+            <div class="col card-height">
+              <h4 class="card-text temperature-icon text-center">${weather[0].temp}°C</h4>
+              <h4 class="card-text weather-description text-center">${weather[0].description}</h4>
+              <div class="wind">
+
+                  <div class="wind-direction"><p class="text-center" style="transform:rotate(${weather[0].windDirection}deg)">&#x2193</p></div>
+                    <h4 class="card-text wind-speed text-center">${weather[0].windSpeed} mph</h4>
+                </div>
+                </div>
+            </div>
+            </div>
+          </div>
+              </div>
+                  </div>
+                </div>
+
+
+  </div>`
+  elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
+}
+
+
+export const displayHourlyWeather = (weather) => {
+
+
+    const markup = `
+<div class="col-10 mx-auto my-3 col-md-6 col-lg-2">
+
+  <div class="hourly-card d-flex justify-content-center">
+
+
+    <div class="card all-card hourly-card py-3">
+
             <div class="card-time">
               <h4 class="card-title text-center py-2">${weather[0].time}</h4>
             </div>
@@ -140,5 +192,6 @@ export const displayHourlyWeather = (weather) => {
                     `
 
                   elements.hourlyWeatherContainer.insertAdjacentHTML('beforeend', markup);
+
 
 }

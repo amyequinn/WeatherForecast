@@ -6,6 +6,8 @@ const app = express();
 Accept-Encoding: gzip, compress, br;
 
 
+
+
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname + '/dist'));
 

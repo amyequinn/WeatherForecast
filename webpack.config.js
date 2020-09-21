@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 
-
 module.exports = {
   entry: ['./src/js/index.js'],
   output: {
@@ -21,11 +20,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-new webpack.ProvidePlugin({ // inject ES5 modules as global vars
-  $: 'jquery',
-  jQuery: 'jquery',
-  'window.jQuery': 'jquery'
-}),
+    new webpack.ProvidePlugin({ // inject ES5 modules as global vars
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
+
     new htmlWebpackPlugin({
       cache: false,
       filename: 'index.html',
@@ -45,9 +45,9 @@ new webpack.ProvidePlugin({ // inject ES5 modules as global vars
 
         {
           loader: 'babel-loader',
-           options: {
-          presets: ['@babel/preset-env']
-        }
+          options: {
+            presets: ['@babel/preset-env']
+          }
         },
 
 
@@ -60,31 +60,31 @@ new webpack.ProvidePlugin({ // inject ES5 modules as global vars
 
       }
 
-//
-//
-// {
-//             loader: 'file-loader',
-//
-//             options: {
-//               name: 'style.css',
-//               outputPath: 'stylesheets/'
-//
-//             }
-//           }
+      //
+      //
+      // {
+      //             loader: 'file-loader',
+      //
+      //             options: {
+      //               name: 'style.css',
+      //               outputPath: 'stylesheets/'
+      //
+      //             }
+      //           }
 
 
 
-          // {
-          //   loader: 'postcss-loader',
-          //   options: {
-          //     plugins: function() {
-          //       return [
-          //         require('precss'),
-          //         require('autoprefixer')
-          //       ];
-          //     }
-          //   }
-          // }
+      // {
+      //   loader: 'postcss-loader',
+      //   options: {
+      //     plugins: function() {
+      //       return [
+      //         require('precss'),
+      //         require('autoprefixer')
+      //       ];
+      //     }
+      //   }
+      // }
 
 
 
