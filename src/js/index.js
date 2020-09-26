@@ -18,20 +18,26 @@ window.s = state;
 
 //Check if browser supports geolocation
 
-elements.startElement.addEventListener("click", () => getGeoLocation());
-elements.todayElement.addEventListener("click", () => getGeoLocation());
 
-function getGeoLocation() {
+let handler = function getGeoLocation() {
 
 if ("geolocation" in navigator) {
 
   navigator.geolocation.getCurrentPosition(setPosition, showError);
 
+
 } else {
   elements.notificationElement.style.display = "block";
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
+
+elements.startElement.removeEventListener('click', handler);
+elements.todayElement.removeEventListener('click', handler);
 }
+
+
+elements.startElement.addEventListener("click", handler);
+elements.todayElement.addEventListener("click", handler);
 
 
 

@@ -13,7 +13,6 @@ export const renderResults = weather => {
 
   hourlyWeather.forEach(renderHourlyWeather);
 
-
 }
 
 const KELVIN = 273;
@@ -90,7 +89,7 @@ weather.icon = weather.weather[0].icon;
 weather.description = weather.weather[0].description;
 weather.temp = Math.floor(weather.temp - KELVIN);
 
-  const allWeather = [{
+  let allWeather = [{
     today: weather.today,
     date: weather.date,
     time: weather.time,
@@ -101,15 +100,14 @@ weather.temp = Math.floor(weather.temp - KELVIN);
     windDirection: weather.windDirection
   }];
 
-displayHourlyWeather(allWeather);
 
-displayCarousel(allWeather, i);
+ displayCarousel(allWeather, i);
 
 }
 
 export const displayCarousel = (weather, i) => {
 
-  let carouselActive = ''
+  let carouselActive = '';
 
   if(i === 0){
     carouselActive = 'carousel-item active'
@@ -117,53 +115,18 @@ export const displayCarousel = (weather, i) => {
     carouselActive = 'carousel-item'
   }
 
+if(weather[0].time === "06:00"){
+  console.log(i)
 
-  const markup = `
-  <div class="${carouselActive}">
-<div class="col-10 mx-auto my-3 col-md-6 col-lg-6">
-
-  <div class="hourly-card d-flex justify-content-center">
-
-
-    <div class="card all-card hourly-card py-3">
-
-            <div class="card-time">
-              <h4 class="card-title text-center py-2">${weather[0].time}</h4>
-            </div>
-            <div class="owi-group text-center py-1">
-              <i class="owi owi-4x owi-${weather[0].icon}"></i>
-            </div>
-            <div class="row card-body">
-            <div class="col card-height">
-              <h4 class="card-text temperature-icon text-center">${weather[0].temp}°C</h4>
-              <h4 class="card-text weather-description text-center">${weather[0].description}</h4>
-              <div class="wind">
-
-                  <div class="wind-direction"><p class="text-center" style="transform:rotate(${weather[0].windDirection}deg)">&#x2193</p></div>
-                    <h4 class="card-text wind-speed text-center">${weather[0].windSpeed} mph</h4>
-                </div>
-                </div>
-            </div>
-            </div>
-          </div>
-              </div>
-                  </div>
-                </div>
-
-
-  </div>`
-  elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
 }
 
 
-export const displayHourlyWeather = (weather) => {
+  const markup = `
 
 
-    const markup = `
-<div class="col-10 mx-auto my-3 col-md-6 col-lg-2">
+  <div class="${carouselActive} col-12 col-sm-6 col-md-4 col-lg-3">
 
-  <div class="hourly-card d-flex justify-content-center">
-
+<div class="img-fluid mx-auto d-block">
 
     <div class="card all-card hourly-card py-3">
 
@@ -189,9 +152,35 @@ export const displayHourlyWeather = (weather) => {
               </div>
                   </div>
                 </div>
-                    `
 
-                  elements.hourlyWeatherContainer.insertAdjacentHTML('beforeend', markup);
+
+
+  </div>`
+
+  elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
+    // if(elements.carouselContainer.classList.contains('d-none')) {
+    // elements.carouselContainer.classList.remove('d-none');
+    //     elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
+    //
+    // }
+    //   else {
+    //   return
+    //   }
+
+// console.log(elements.carouselContainer.firstElementChild);
+
+// if(elements.carouselContainer.firstElementChild == null){
+//   elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup)
+// }else {
+//   return
+// }
+  // if(elements.carouselContainer.firstElementChild.firstChild.parentElement.classList.contains('carousel-item')){
+  //   return
+  // }
+  // else {
+    // elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
+  // }
+
 
 
 }
