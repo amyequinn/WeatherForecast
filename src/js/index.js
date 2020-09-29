@@ -41,7 +41,6 @@ elements.todayElement.addEventListener("click", handler);
 
 
 
-
 //Set users position
 let latitude;
 let longitude;

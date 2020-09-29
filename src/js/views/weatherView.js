@@ -3,6 +3,8 @@ import {
 } from './base';
 
 
+
+
 export const renderResults = weather => {
 
   const hourlyWeather = weather.hourly.splice(0, 24);
@@ -16,6 +18,8 @@ export const renderResults = weather => {
 }
 
 const KELVIN = 273;
+
+let indexOf6AM = false;
 
 export const renderDailyWeather = (weather) => {
 
@@ -44,6 +48,7 @@ export const renderDailyWeather = (weather) => {
 
 export const displayDailyWeather = (allWeather) => {
 
+
   const markup = `
   <div class="card all-card today-card py-3">
           <div class="card-date">
@@ -66,28 +71,29 @@ export const displayDailyWeather = (allWeather) => {
           </div>
         </div>
             </div>`
-    if(elements.getGeoElement.classList.contains('d-none')) {
+  if (elements.getGeoElement.classList.contains('d-none')) {
     elements.getGeoElement.classList.remove('d-none');
-      elements.todaysWeatherContainer.insertAdjacentHTML('beforeend', markup);
+    elements.todaysWeatherContainer.insertAdjacentHTML('beforeend', markup);
 
-    }
-      else {
-      return
-      }
+  } else {
+    return
+  }
 
 }
+
+
 export const renderHourlyWeather = (weather, i) => {
 
-weather.date = new Date(weather.dt * 1000);
-weather.hours = weather.date.getHours();
-weather.display = weather.date.toString();
-weather.today = weather.display.slice(0, 15);
-weather.time = weather.display.slice(16, 21)
-weather.windSpeed = Math.floor(weather.wind_speed / 0.44704);
-weather.windDirection = weather.wind_deg;
-weather.icon = weather.weather[0].icon;
-weather.description = weather.weather[0].description;
-weather.temp = Math.floor(weather.temp - KELVIN);
+  weather.date = new Date(weather.dt * 1000);
+  weather.hours = weather.date.getHours();
+  weather.display = weather.date.toString();
+  weather.today = weather.display.slice(0, 15);
+  weather.time = weather.display.slice(16, 21)
+  weather.windSpeed = Math.floor(weather.wind_speed / 0.44704);
+  weather.windDirection = weather.wind_deg;
+  weather.icon = weather.weather[0].icon;
+  weather.description = weather.weather[0].description;
+  weather.temp = Math.floor(weather.temp - KELVIN);
 
   let allWeather = [{
     today: weather.today,
@@ -100,8 +106,9 @@ weather.temp = Math.floor(weather.temp - KELVIN);
     windDirection: weather.windDirection
   }];
 
+  l
 
- displayCarousel(allWeather, i);
+  displayCarousel(allWeather, i);
 
 }
 
@@ -109,16 +116,15 @@ export const displayCarousel = (weather, i) => {
 
   let carouselActive = '';
 
-  if(i === 0){
+  if (i === 0) {
     carouselActive = 'carousel-item active'
   } else {
     carouselActive = 'carousel-item'
   }
 
-if(weather[0].time === "06:00"){
-  console.log(i)
-
-}
+  if (weather[0].time === "07:00") {
+    indexOf6AM = true;
+  }
 
 
   const markup = `
@@ -153,33 +159,15 @@ if(weather[0].time === "06:00"){
                   </div>
                 </div>
 
-
-
   </div>`
 
-  elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
-    // if(elements.carouselContainer.classList.contains('d-none')) {
-    // elements.carouselContainer.classList.remove('d-none');
-    //     elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
-    //
-    // }
-    //   else {
-    //   return
-    //   }
 
-// console.log(elements.carouselContainer.firstElementChild);
+  if (indexOf6AM === false) {
+    elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
 
-// if(elements.carouselContainer.firstElementChild == null){
-//   elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup)
-// }else {
-//   return
-// }
-  // if(elements.carouselContainer.firstElementChild.firstChild.parentElement.classList.contains('carousel-item')){
-  //   return
-  // }
-  // else {
-    // elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
-  // }
+  }
+
+
 
 
 
