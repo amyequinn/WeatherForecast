@@ -82,9 +82,6 @@ body{
   min-height: 100vh;
   background: url('../img/earth.jpeg')center/cover fixed no-repeat;
   animation-name: zoom, 20s, 4s, infinite;
-  /* animation-duration: 20s;
-  animation-delay: 4s;
-  animation-iteration-count: infinite; */
   color: white;
 }
 
@@ -133,7 +130,7 @@ body{
 }
 
 .location p{
-  color: var(--LapisLaxuli);
+  color: var(--IndigoDye);
   font-size: 2rem;
 }
 
@@ -311,14 +308,17 @@ body{
 }
 
 .all-card{
-  background: var(--DarkSkyBlue)!important;
-    color: var(--LapisLaxuli)!important;
+  background: linear-gradient(rgba(58, 124, 165, 0.7),rgba(58, 124, 165, 0.7));
+  /* background: (var(--DarkSkyBlue)!important; */
+
+    color: var(--Timberwolf)!important;
     /* height: 390px!important;
     width: 350px!important; */
     border-radius: 5%;
 }
 .card-date, .card-time{
-  background: var(--Timberwolf);
+
+  color: var(--IndigoDye);
   padding-top: 0.5rem;
 }
 
