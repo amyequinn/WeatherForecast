@@ -79,12 +79,12 @@ body{
 }
 
 .height-max{
-  min-height: calc(100vh - 20px);
+  min-height: 100vh;
   background: url('../img/earth.jpeg')center/cover fixed no-repeat;
-  animation-name: zoom;
-  animation-duration: 20s;
+  animation-name: zoom, 20s, 4s, infinite;
+  /* animation-duration: 20s;
   animation-delay: 4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   color: white;
 }
 
@@ -152,6 +152,12 @@ body{
 .section-height{
   /* min-height: calc(100vh - 94px); */
   padding-top: 1.5rem;
+}
+
+.today{
+  background: linear-gradient(rgba(47, 102, 144, 0.5),rgba(47, 102, 144, 0.5)),url('../img/raindrops.jpg')center/cover fixed no-repeat;
+  padding-top: 6rem!important;
+
 }
 
 /*carousel*/
@@ -296,6 +302,8 @@ body{
 /*
  */
 /*weather card*/
+
+
 
 .today-card{
       height: 390px!important;
