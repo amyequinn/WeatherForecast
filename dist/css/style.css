@@ -81,7 +81,10 @@ body{
 .height-max{
   min-height: 100vh;
   background: url('../img/earth.jpeg')center/cover fixed no-repeat;
-  animation-name: zoom, 20s, 4s, infinite;
+  animation-name: zoom;
+  animation-duration: 20s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
   color: white;
 }
 

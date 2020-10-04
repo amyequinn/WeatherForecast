@@ -11,7 +11,7 @@ export const renderResults = weather => {
   // weather.daily.forEach(renderWeather)
   renderWeather(weather.daily[0]);
 
-  //
+
   // hourlyWeather.forEach(renderHourlyWeather);
 hourlyWeather.forEach(renderWeather);
 
@@ -50,9 +50,12 @@ export const renderWeather = (weather, i) => {
         windDirection: weather.windDirection
   }];
 
-  displayDailyWeather(allWeather);
+// if i is undefined - this is the daily weather to be displayed on the daily
+// card, else it is the hourly weather (i = 0 > 23) from the forEach method to
+// be displayed on the Carousel;
 
-  displayCarousel(allWeather, i);
+isNaN(i) ? displayDailyWeather(allWeather) : displayCarousel(allWeather, i);
+
 
 }
 
@@ -95,11 +98,7 @@ export const displayCarousel = (weather, i) => {
 
   let carouselActive = '';
 
-  if (i === 0) {
-    carouselActive = 'carousel-item active'
-  } else {
-    carouselActive = 'carousel-item'
-  }
+carouselActive = (i === 0) ? 'carousel-item active' : 'carousel-item';
 
   const markup = `
 
@@ -135,10 +134,11 @@ export const displayCarousel = (weather, i) => {
 
   </div>`
 
+//display only the hourly weather until 6am for today
+
   if (weather[0].time === "07:00") {
     indexOf6AM = true;
   }
-
 
   if(!indexOf6AM) {
     elements.carouselContainer.insertAdjacentHTML('beforeEnd', markup);
