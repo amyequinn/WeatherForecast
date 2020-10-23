@@ -27,6 +27,7 @@ if ("geolocation" in navigator) {
 
 
 } else {
+  console.log("ERRORR")
   elements.notificationElement.style.display = "block";
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
@@ -35,7 +36,7 @@ elements.startElement.removeEventListener('click', handler);
 elements.todayElement.removeEventListener('click', handler);
 }
 
-
+//
 elements.startElement.addEventListener("click", handler);
 elements.todayElement.addEventListener("click", handler);
 
@@ -106,7 +107,7 @@ const controlWeather = async () => {
 
       await state.weather.getData(api);
 
-
+      console.log(state.weather);
       weatherView.renderResults(state.weather.data)
 
 

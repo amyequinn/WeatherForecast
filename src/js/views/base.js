@@ -2,6 +2,7 @@
 export const elements = {
 
   todaysWeatherContainer: document.querySelector('.today-card'),
+  todaysSunriseContainer: document.querySelector('.sun-card'),
   weatherContainer: document.querySelector('.container'),
   notificationElement: document.querySelector('.notification'),
   iconElement: document.querySelector('.weather-icon'),
@@ -9,7 +10,7 @@ export const elements = {
   descElement: document.querySelector('.temperature-description p'),
   locationElement: document.querySelector('.location p'),
   preloaderElement: document.querySelector('.preloader'),
-  startElement: document.querySelector('.title-icon'),
+  startElement: document.querySelector('.start-icon'),
   getGeoElement: document.querySelector('.today'),
   todayElement: document.querySelector('.home-link'),
   hourlyWeatherContainer: document.querySelector('.hourly-row'),
