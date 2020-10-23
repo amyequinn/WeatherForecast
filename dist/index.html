@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!--weather icons -->
   <link rel="stylesheet" href="css/open-weather-icons.css">
+  <link rel="stylesheet" href="css/weather-icons.css">
+  <link rel="stylesheet" href="css/weather-icons-wind.css">
   <!-- font awesome -->
   <script src="js/all.js"></script>
   <title>Weather Forecast App</title>
@@ -27,7 +29,7 @@
   <!-- end preloader -->
 
   <!-- nav element -->
-  <nav class="navbar fixed-top navbar-expand-lg px-3" id="navBar">
+  <nav class="navbar navbar-absolute fixed-top navbar-expand-lg px-3" id="navBar">
     <a href="#" class="navbar-brand">
       <span>
         <i class="fas fa-rainbow" alt="logo"></i>
@@ -78,25 +80,35 @@
   <!-- header section -->
   <header class="header" id="header">
     <div class="container-fluid">
-      <div class="row height-max align-items-center">
-        <div class="col col-md-9 ml-auto text-right pr-5">
+      <div class="row height-max mx-auto justify-content-center">
+         <div class="col col-md-9 mx-auto d-flex justify-content-center"> -->
 
-          <h5 class="title-heading d-inline-block p-2 text-uppercase">weather app</h5>
-          <h2 class="title text-uppercase my-2 title">accurate weather forecast</h2>
-          <h3 class="title text-uppercase">around the globe</h3>
-          <h6 class="text-capitalize">start</h6>
-          <a href="#today" class="title-icon d-inline-block mx-2">
-            <i class="fas fa-play"></i>
+          <a href="#today" class="mx-auto arrow bounce start-icon">
+            <i class="fa fa-arrow-down fa-2x"></i>
           </a>
 
-        </div>
+        <!-- <div class="row date-row">
+            <h1 class="text-left">DATE</h1>
+            <h1 class= "text-right">TIME</h1>
+          </div>
+          <div class="row title-row">
+            <h5 class="text-uppercase">weather forecast</h5>
+          </div> -->
+
+        <!-- <div class="row arrow bounce justify-content-center">
+            <a href="#today" class="start-icon">
+              <i class="fa fa-arrow-down fa-2x"></i>
+            </a>
+          </div> -->
+
+         </div>
       </div>
     </div>
   </header>
   <!--end of  header section -->
 
   <!-- today section -->
-    <section class="today py-5 d-none" id="today">
+  <section class="today min-height py-5 d-none" id="today">
 
     <div class="notification">
     </div>
@@ -120,43 +132,62 @@
       <!-- end of section title -->
       <div class="row today-row">
 
-        <!-- single card -->
-    
-        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
 
+        <!-- single card -->
+
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+          <div class="sun-card mx-auto d-flex justify-content-center">
+
+
+          </div>
+
+        </div>
+        <!--end of single card?-->
+        <!-- single card -->
+
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
           <div class="today-card mx-auto d-flex justify-content-center">
 
 
           </div>
+
         </div>
         <!--end of single card?-->
+        <!-- single card -->
+
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+
+
+        </div>
+        <!--end of single card?-->
+
 
       </div>
       <!--end of today row -->
 
-        <!--start of boostrap multiple carousel -->
-        <div class="top-content">
-        	<div class="container-fluid">
-        		<div id="carousel-example" class="carousel slide">
+      <!--start of boostrap multiple carousel -->
+      <div class="top-content">
+        <div class="container-fluid">
+          <div id="carousel-example" class="carousel slide">
 
-        			<div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
 
-        			</div>
-        			<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-        		</div>
-        	</div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
+      </div>
 
 
-        <!--boostrap multiple carousel -->
-<!--end of container -->
+      <!--boostrap multiple carousel -->
+      <!--end of container -->
     </div>
   </section>
   <!--end of today section -->
