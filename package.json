@@ -28,7 +28,11 @@
     "precss": "^4.0.0",
     "regenerator-runtime": "^0.13.7",
     "watchpack": "^1.7.4",
-    "webpack-cli": "^3.0.2"
+    "webpack-cli": "^3.0.2",
+      "engines": {
+        "node": "12.x",
+        "npm": "6.x"
+      }
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -40,10 +44,6 @@
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
     "css-loader": "^4.3.0",
-    "engines": {
-      "node": "12.19.0",
-      "npm": "6.14.8"
-    },
     "exports-loader": "^1.1.0",
     "file-loader": "^6.1.0",
     "html-loader": "^1.3.1",
