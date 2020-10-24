@@ -41,8 +41,11 @@
       </span>
     </button>
     <!--  -->
+
+
     <div class="collapse navbar-collapse" id="myNav">
       <ul class="navbar-nav mx-auto">
+
         <li class="nav-item active ">
           <a href="#header" class="nav-link text-capitalize">
             home
@@ -50,12 +53,17 @@
         </li>
         <li class="nav-item">
           <a href="#today" class="nav-link home-link text-capitalize">
-            weather today
+            today's forecast
           </a>
         </li>
         <li class="nav-item">
-          <a href="#weekly forecast" class="nav-link text-capitalize">
-            weekly forecast
+          <a href="#hourlyforecast" class="nav-link hourly-link text-capitalize">
+            hourly forecast
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#week" class="nav-link weekly-link text-capitalize">
+            7-day forecast
           </a>
         </li>
       </ul>
@@ -79,118 +87,128 @@
   </div>
   <!-- header section -->
   <header class="header" id="header">
-    <div class="container-fluid">
-      <div class="row height-max mx-auto justify-content-center">
-         <div class="col col-md-9 mx-auto d-flex justify-content-center"> -->
 
-          <a href="#today" class="mx-auto arrow bounce start-icon">
-            <i class="fa fa-arrow-down fa-2x"></i>
+    <div class="container-fluid height-max d-flex align-items-center justify-content-center">
+      <div class="row">
+
+        <!-- <div class="col col-10 mx-auto d-flex align-items-center justify-content-center">
+                 <a href="#today" class="arrow start-icon">
+                    <button class="btn start-button text-uppercase">weather app</button>
+                 </a>
+
+             </div> -->
+
+        <div class="col col-10 mx-auto d-flex align-items-center justify-content-center">
+          <a href="#today" class="arrow bounce start-icon">
+            <span> <i class="fa fa-arrow-down fa-2x"></i></span>
           </a>
+        </div>
 
-        <!-- <div class="row date-row">
-            <h1 class="text-left">DATE</h1>
-            <h1 class= "text-right">TIME</h1>
-          </div>
-          <div class="row title-row">
-            <h5 class="text-uppercase">weather forecast</h5>
-          </div> -->
-
-        <!-- <div class="row arrow bounce justify-content-center">
-            <a href="#today" class="start-icon">
-              <i class="fa fa-arrow-down fa-2x"></i>
-            </a>
-          </div> -->
-
-         </div>
       </div>
+
+
+
     </div>
   </header>
   <!--end of  header section -->
 
-  <!-- today section -->
-  <section class="today min-height py-5 d-none" id="today">
-
-    <div class="notification">
-    </div>
-
+  <section class="today min-height py-5 d-none" name="today" id="today">
     <div class="container section-height">
       <!-- section title -->
       <div class="row title-row mb-5">
         <div class="col d-flex flex-wrap text-uppercase justify-content-center">
-          <h1 class="font-weight-bold align-self-center mx-1">weather</h1>
-          <h1 class="section-title--special mx-1">today</h1>
+          <h1 class="font-weight-bold align-self-center mx-1">today's</h1>
+          <h1 class="section-title--special mx-1">forecast</h1>
         </div>
-      </div>
-
-      <div class="row location-row">
-        <!--location-->
-        <div class="location mx-auto text-center">
-          <p class="mx-auto text-center"></p>
-        </div>
-      </div>
-
-      <!-- end of section title -->
-      <div class="row today-row">
-
-
-        <!-- single card -->
-
-        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
-          <div class="sun-card mx-auto d-flex justify-content-center">
-
-
-          </div>
-
-        </div>
-        <!--end of single card?-->
-        <!-- single card -->
-
-        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
-          <div class="today-card mx-auto d-flex justify-content-center">
-
-
-          </div>
-
-        </div>
-        <!--end of single card?-->
-        <!-- single card -->
-
-        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
-
-
-        </div>
-        <!--end of single card?-->
-
-
-      </div>
-      <!--end of today row -->
-
-      <!--start of boostrap multiple carousel -->
-      <div class="top-content">
-        <div class="container-fluid">
-          <div id="carousel-example" class="carousel slide">
-
-            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+        <!--today page -->
+        <div class="top-content">
+          <div class="container-fluid">
+            <div class="location d-flex justify-content-center mb-3">
+              <p></p>
+            </div>
+            <div class="today-card mx-auto pt-3">
 
             </div>
-            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
         </div>
+        <!--today page -->
+
       </div>
 
 
-      <!--boostrap multiple carousel -->
-      <!--end of container -->
+
     </div>
+    <!--end of container-->
   </section>
-  <!--end of today section -->
+  <!--end of today secction-->
+
+  <!--hourly section -->
+
+  <section class="hourly min-height py-5 d-none" name="hourlyforecast" id="hourlyforecast">
+    <div class="container section-height">
+      <!-- section title -->
+      <div class="row title-row mb-5">
+        <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+          <h1 class="font-weight-bold align-self-center mx-1">hourly</h1>
+          <h1 class="section-title--special mx-1">forecast</h1>
+        </div>
+        <!--start of boostrap multiple carousel -->
+        <div class="top-content">
+          <div class="container-fluid">
+            <div id="carousel-example" class="carousel slide">
+
+              <div class="carousel-inner row w-100 mx-auto" role="listbox">
+
+              </div>
+              <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--boostrap multiple carousel -->
+
+      </div>
+
+
+
+    </div>
+    <!--end of container-->
+  </section>
+  <!--end of hourly secction-->
+
+  <!--weekly section-->
+  <section class="weekly min-height py-5 d-none" name="week" id="week">
+    <div class="container section-height">
+      <!-- section title -->
+      <div class="row title-row mb-5">
+        <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+          <h1 class="font-weight-bold align-self-center mx-1">7 day</h1>
+          <h1 class="section-title--special mx-1">forecast</h1>
+        </div>
+      </div>
+
+      <div class="row weekly-card">
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+    <!--end of container-->
+  </section>
+  <!--end of weekly secction-->
+
 
 
 

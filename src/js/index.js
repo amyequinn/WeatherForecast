@@ -3,21 +3,14 @@ import Weather from './models/Weather';
 import * as locationView from './views/locationView';
 import * as weatherView from './views/weatherView';
 import {elements} from './views/base';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import "core-js/stable";
-// import "regenerator-runtime/runtime";
-
 
 window.addEventListener('load', () => elements.preloaderElement.classList.add('hidePreloader'));
 
 const state = {};
 
+const allElements = [elements.startElement, elements.todayElement, elements.hourlyElement, elements.weeklyElement];
 
 window.s = state;
-
-//Check if browser supports geolocation
-
 
 let handler = function getGeoLocation() {
 
@@ -27,20 +20,15 @@ if ("geolocation" in navigator) {
 
 
 } else {
-  console.log("ERRORR")
+  console.log("ERROR")
   elements.notificationElement.style.display = "block";
   elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
 }
 
-elements.startElement.removeEventListener('click', handler);
-elements.todayElement.removeEventListener('click', handler);
+allElements.forEach(element => element.removeEventListener('click', handler));
 }
 
-//
-elements.startElement.addEventListener("click", handler);
-elements.todayElement.addEventListener("click", handler);
-
-
+allElements.forEach(element => element.addEventListener("click", handler))
 
 //Set users position
 let latitude;
@@ -49,16 +37,12 @@ let longitude;
 
   function setPosition(position) {
 
-  // if(elements.getGeoElement.classList.contains('d-none')) {
-  // elements.getGeoElement.classList.remove('d-none');
+
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   controlLocation(latitude, longitude);
   controlWeather(latitude, longitude);
-// }
-//   else {
-//     return
-//   }
+
 }
 
 function showError(err) {
@@ -79,7 +63,6 @@ const controlLocation = async () => {
     window.l = state.location
 
     try {
-
 
       const api = `https://api.openweathermap.org/data/2.5/weather?lat=${state.location.latitude}&lon=${state.location.longitude}&appid=${apiKey}`;
 
@@ -102,16 +85,15 @@ const controlWeather = async () => {
     window.w = state.weather;
 
     try {
-
+      if(elements.getGeoElement.classList.contains('d-none')){
+          elements.preloaderElement.classList.remove('hidePreloader');
+      }
       const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${state.weather.latitude}&lon=${state.weather.longitude}&appid=${apiKey}`;
 
       await state.weather.getData(api);
 
-      console.log(state.weather);
       weatherView.renderResults(state.weather.data)
-
-
-      // weatherView.renderWeather(state)
+      elements.preloaderElement.classList.add('hidePreloader');
 
     } catch (err) {
       alert("Weather " + err.message)

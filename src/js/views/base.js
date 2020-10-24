@@ -2,7 +2,6 @@
 export const elements = {
 
   todaysWeatherContainer: document.querySelector('.today-card'),
-  todaysSunriseContainer: document.querySelector('.sun-card'),
   weatherContainer: document.querySelector('.container'),
   notificationElement: document.querySelector('.notification'),
   iconElement: document.querySelector('.weather-icon'),
@@ -12,8 +11,14 @@ export const elements = {
   preloaderElement: document.querySelector('.preloader'),
   startElement: document.querySelector('.start-icon'),
   getGeoElement: document.querySelector('.today'),
+  getHourlySection: document.querySelector('.hourly'),
+  getWeeklySection: document.querySelector('.weekly'),
+  weeklyContainer: document.querySelector('.weekly-card'),
   todayElement: document.querySelector('.home-link'),
+  hourlyElement: document.querySelector('.hourly-link'),
+  weeklyElement: document.querySelector('.weekly-link'),
   hourlyWeatherContainer: document.querySelector('.hourly-row'),
-  carouselContainer: document.querySelector('.carousel-inner')
+  carouselContainer: document.querySelector('.carousel-inner'),
+  navLinkButton: document.querySelector('.nav-link')
 }
 //

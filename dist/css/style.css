@@ -8,9 +8,9 @@
   --Timberwolf:#D9DCD6;
   --IndigoDye:#16425B;
   --DarkSkyBlue:#81C3D7;
+
 }
 
-#myFakeElement { color:red ; }
 
 
 body{
@@ -32,19 +32,10 @@ body{
   display: none!important;
 }
 
-.navbar{
+.navbar, .nav-link, .navbar-nav{
   background: white;
 }
 
-.nav-link{
-  background: white;
-  color: var(--LapisLaxuli);
-
-}
-
-.navbar-nav{
-  background: white;
-}
 
 .navbar-toggler{
   color: var(--LapisLaxuli)!important;
@@ -52,20 +43,22 @@ body{
 }
 .navbar-brand{
   font-size: 2rem;
-  color: var(--LapisLaxuli);
 }
 
-.nav-icon{
+.nav-icon {
   font-size: 1.5rem;
-  color: var(--LapisLaxuli);
   text-decoration: none!important;
-  transition-property: color;
-  transition-duration: 2s;
-  transition-timing-function: linear;
+
 }
 
-.nav-icon:hover{
-  color: var(--SteelBlue);
+.nav-icon, .navbar-brand, .nav-link{
+    color: var(--LapisLaxuli);
+    transition-property: color;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+}
+.nav-icon:hover, .nav-link:hover, .navbar-brand:hover{
+  color: var(--DarkSkyBlue);
 }
 
 
@@ -93,6 +86,7 @@ body{
 
 }
 
+
 @keyframes zoom{
  0% {
    transform: scale(1.1) rotate(0deg) ;
@@ -111,11 +105,11 @@ body{
 
 
 .arrow {
-  font-size: 3rem;
-  margin: 15% 0;
+  font-size: 4rem;
+  /* margin: 50% 0; */
   cursor: pointer;
-  display: flex;
-  align-items:flex-end;
+  /* display: flex;
+  align-items:center; */
   opacity: 0.9;
 
 
@@ -197,17 +191,14 @@ body{
   padding-top: 1.5rem;
 }
 
-.today{
+.today, .hourly, .weekly{
 /* margin-top: 100px; */
+  /* margin-top: 74px; */
+  min-height: calc(100vh - 74px);
   background: linear-gradient(rgba(47, 102, 144, 0.5),rgba(47, 102, 144, 0.5)),url('../img/raindrops.jpg')center/cover fixed no-repeat;
-
-
 
 }
 
-/* .title-row{
-  margin-top: 4rem!
-} */
 
 /*carousel*/
 
@@ -217,7 +208,7 @@ body{
 */
 @media (min-width: 768px) and (max-width: 991px) {
     /* Show 4th slide on md if col-md-4*/
-    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner  .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -33.3333%;  /*change this with javascript in the future*/
@@ -228,7 +219,7 @@ body{
 }
 @media (min-width: 576px) and (max-width: 768px) {
     /* Show 3rd slide on sm if col-sm-6*/
-    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner  .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -50%;  /*change this with javascript in the future*/
@@ -242,14 +233,14 @@ body{
         margin-right: 0;
     }
     /* show 2 items */
-    .carousel-inner .active + .carousel-item {
+    .carousel-inner  .active + .carousel-item {
         display: block;
     }
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+    .carousel-inner  .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner  .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
         transition: none;
     }
-    .carousel-inner .carousel-item-next {
+    .carousel-inner  .carousel-item-next {
         position: relative;
         transform: translate3d(0, 0, 0);
     }
@@ -262,7 +253,7 @@ body{
         visibility: visible;
     }
     /* farthest right hidden item must be also positioned for animations */
-    .carousel-inner .carousel-item-prev.carousel-item-right {
+    .carousel-inner  .carousel-item-prev.carousel-item-right {
         position: absolute;
         top: 0;
         left: 0;
@@ -284,13 +275,13 @@ body{
 /* MD */
 @media (min-width: 768px) {
     /* show 3rd of 3 item slide */
-    .carousel-inner .active + .carousel-item + .carousel-item {
+    .carousel-inner  .active + .carousel-item + .carousel-item {
         display: block;
     }
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    .carousel-inner  .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
         transition: none;
     }
-    .carousel-inner .carousel-item-next {
+    .carousel-inner  .carousel-item-next {
         position: relative;
         transform: translate3d(0, 0, 0);
     }
@@ -319,7 +310,7 @@ body{
         transition: none;
     }
     /* Show 5th slide on lg if col-lg-3 */
-    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner  .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -25%;  /*change this with javascript in the future*/
@@ -343,7 +334,11 @@ body{
     }
 }
 
-.top-content { width: 100%; padding-top: 100px; }
+/*end of carousel inner */
+
+
+
+.top-content { width: 100%; padding-top: 8%; }
 
 .carousel-control-next, .carousel-control-prev { border: 0; }
 
