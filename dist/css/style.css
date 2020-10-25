@@ -21,6 +21,8 @@ body{
 }
 .preloader{
   position: fixed;
+  font-size: 8rem;
+  color: var(--IndigoDye);
   top: 0;
   bottom: 0;
   left: 50%;
