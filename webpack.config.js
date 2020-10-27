@@ -10,8 +10,8 @@ module.exports = {
   entry: ['./src/js/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: 'bundle.js'
+    // publicPath: '/dist/',
+    filename: 'js/bundle.js'
   },
   devServer: {
     contentBase: './dist'
@@ -27,10 +27,8 @@ module.exports = {
     }),
 
     new htmlWebpackPlugin({
-      cache: false,
       filename: 'index.html',
       template: './src/index.html',
-      minify: false
     })
   ],
 
