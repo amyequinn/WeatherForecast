@@ -60,32 +60,6 @@ module.exports = {
 
       }
 
-      //
-      //
-      // {
-      //             loader: 'file-loader',
-      //
-      //             options: {
-      //               name: 'style.css',
-      //               outputPath: 'stylesheets/'
-      //
-      //             }
-      //           }
-
-
-
-      // {
-      //   loader: 'postcss-loader',
-      //   options: {
-      //     plugins: function() {
-      //       return [
-      //         require('precss'),
-      //         require('autoprefixer')
-      //       ];
-      //     }
-      //   }
-      // }
-
 
 
     ]
