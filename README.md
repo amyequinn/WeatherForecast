@@ -1,6 +1,8 @@
 
 # LocalWeatherApp
 
+Published to heroku on www.ukweatherforecast.com 
+
 Weather App that determines users location by calling an API using geolocation.
 Calls a weather API to provide a 7-day weather forecast based on latitude / longitude.
 
