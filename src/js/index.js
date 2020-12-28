@@ -19,6 +19,7 @@ window.s = state;
 let preloaderActivate = function() {
   if (elements.getGeoElement.classList.contains('d-none')) {
     elements.preloaderElement.classList.remove('hidePreloader');
+
   }
 }
 
