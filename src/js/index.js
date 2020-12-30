@@ -12,25 +12,18 @@ const state = {};
 
 const allElements = [elements.startElement, elements.todayElement, elements.hourlyElement, elements.weeklyElement];
 
-
-
 window.s = state;
 
 let preloaderActivate = function() {
   if (elements.getGeoElement.classList.contains('d-none')) {
     elements.preloaderElement.classList.remove('hidePreloader');
-
   }
 }
-
 
 let handler = function getGeoLocation() {
 
   if ("geolocation" in navigator) {
-
     navigator.geolocation.getCurrentPosition(setPosition, showError);
-
-
   } else {
     console.log("ERROR")
     elements.notificationElement.style.display = "block";
@@ -60,8 +53,6 @@ function setPosition(position) {
 function showError(err) {
   elements.notificationElement.style.display = "block";
   elements.notificationElement.innerHTML = `<h3 class="text-center" style="color:red"> ${err.message} Check internet connection</h3>`;
-
-
 }
 
 const apiKey = "f6b43829a6dea90e8fcf07d58ccf2766";
