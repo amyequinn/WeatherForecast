@@ -17,6 +17,7 @@ window.s = state;
 let preloaderActivate = function() {
   if (elements.getGeoElement.classList.contains('d-none')) {
     elements.preloaderElement.classList.remove('hidePreloader');
+    elements.startElement.classList.add('hidePreloader');
   }
   allElements.forEach(element => element.removeEventListener("click", preloaderActivate));
 }
@@ -94,6 +95,7 @@ const controlWeather = async () => {
 
       weatherView.renderResults(state.weather.data)
       elements.preloaderElement.classList.add('hidePreloader');
+      elements.startElement.classList.remove('hidePreloader');
       document.querySelector('.today').scrollIntoView();
 
 
