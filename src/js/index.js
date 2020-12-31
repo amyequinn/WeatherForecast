@@ -18,14 +18,13 @@ let preloaderActivate = function() {
   if (elements.getGeoElement.classList.contains('d-none')) {
     elements.preloaderElement.classList.remove('hidePreloader');
   }
+  allElements.forEach(element => element.removeEventListener("click", preloaderActivate));
 }
 
 let handler = function getGeoLocation() {
-
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(setPosition, showError);
   } else {
-    console.log("ERROR")
     elements.notificationElement.style.display = "block";
     elements.notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>"
   }
